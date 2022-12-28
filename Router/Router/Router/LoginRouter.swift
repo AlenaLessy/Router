@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 /// Роутер входа
 final class LoginRouter: BaseRouter {
     
@@ -16,8 +17,6 @@ final class LoginRouter: BaseRouter {
         static let segueMainIdentifier = "Main"
         static let userDefaultsKey = "login"
     }
-    
-    
     
     // MARK: - Initializers
     

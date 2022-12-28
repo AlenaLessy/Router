@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 /// Роутер главного экрана
 final class MainRouter: BaseRouter {
     

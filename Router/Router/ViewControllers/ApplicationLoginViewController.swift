@@ -17,13 +17,14 @@ final class ApplicationLoginViewController: UIViewController {
         static let password = "1"
         static let userDefaultKey = "login"
     }
-
-    // MARK: Public IBOutlets
     
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-        
+    // MARK: Private IBOutlets
+    
+    @IBOutlet private weak var loginTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    
     // MARK: - Private Properties
+    
     private var loginRouter: LoginRouter?
     
     // MARK: - LifeCycle
@@ -33,14 +34,14 @@ final class ApplicationLoginViewController: UIViewController {
         loginRouterConfigure()
     }
     
-  // MARK: Private Methods
+    // MARK: Private IBAction
     
     @IBAction private func entryButtonAction(_ sender: Any) {
         guard let login = loginTextField.text,
               let password = passwordTextField.text,
               login == Constants.login,
               password == Constants.password
-                else
+        else
         {
             print("Логин или пароль не соответствуют")
             return
@@ -53,8 +54,10 @@ final class ApplicationLoginViewController: UIViewController {
         loginRouter?.toRegistrationVC()
     }
     
+    // MARK: Private Methods
+    
     private func loginRouterConfigure() {
         loginRouter = LoginRouter(viewController: self)
     }
-
+    
 }

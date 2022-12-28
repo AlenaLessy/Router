@@ -27,7 +27,7 @@ final class MainCoctailsBarViewController: UIViewController {
         mainRouterConfigure()
     }
 
-    // MARK: - Private Methods
+    // MARK: Private IBAction
     
     @IBAction private func toBarButtonAction(_ sender: Any) {
         mainRouter?.toCoctailsVC()
@@ -41,6 +41,8 @@ final class MainCoctailsBarViewController: UIViewController {
         UserDefaults.standard.set(false, forKey: Constants.userDefaultKey)
         mainRouter?.toApplicationVC()
     }
+    
+    // MARK: - Private Methods
     
     private func mainRouterConfigure() {
         mainRouter = MainRouter(viewController: self)
